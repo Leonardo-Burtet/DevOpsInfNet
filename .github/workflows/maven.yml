@@ -41,23 +41,23 @@ jobs:
         - name: Aprovação
           run: echo Aprovado
   
-  build-with-docker:
-      runs-on: ubuntu-latest
-      needs: build-prod
-      steps:
+#   build-with-docker:
+#       runs-on: ubuntu-latest
+#       needs: build-prod
+#       steps:
       
-        - uses: actions/checkout@v3
+#         - uses: actions/checkout@v3
     
-        - name: Docker Login
-          uses: docker/login-action@v2.1.0
-          with:
-            username: ${{ secrets.USER }}
-            password: ${{ secrets.PASSWD }}
+#         - name: Docker Login
+#           uses: docker/login-action@v2.1.0
+#           with:
+#             username: ${{ secrets.USER }}
+#             password: ${{ secrets.PASSWD }}
           
-        - name: Build and push Docker images
-          uses: docker/build-push-action@v3.2.0
-          with:
-            context: .
-            push: true
-            tags: |
-              leonardoburtet/devopsinfnetv:latest
+#         - name: Build and push Docker images
+#           uses: docker/build-push-action@v3.2.0
+#           with:
+#             context: .
+#             push: true
+#             tags: |
+#               leonardoburtet/devopsinfnetv:latest
