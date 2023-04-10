@@ -48,7 +48,6 @@ jobs:
           uses: docker/build-push-actionv@3.2.0
           with:
             context: .
-            file: .
             push: true
             tags: |
               leonardoburtet/devopsinfnet:v1
