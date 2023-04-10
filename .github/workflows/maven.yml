@@ -50,8 +50,8 @@ jobs:
             context: .
             push: true
             tags: |
-              leonardoburtet/devopsinfnet:v1
-              leonardoburtet/devopsinfnet:latest
+              leonardoburtet/devopsinfnetv1:v1
+              leonardoburtet/devopsinfnetv1:latest
   build-prod:
       runs-on: ubuntu-latest
       environment:
