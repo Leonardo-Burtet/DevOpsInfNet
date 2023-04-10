@@ -57,7 +57,7 @@ jobs:
         - name: Build and push Docker images
           uses: docker/build-push-action@v3.2.0
           with:
-            file: .
+            context: .
             push: true
             tags: |
-              leonardoburtet/devopsinfnetv1:latest
+              leonardoburtet/devopsinfnetv:latest
