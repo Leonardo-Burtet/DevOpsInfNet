@@ -31,9 +31,19 @@ jobs:
     - name: Build with Maven
       run: mvn -B package --file pom.xml
     
+  build-prod:
+      runs-on: ubuntu-latest
+      environment:
+        name: prod
+        url: https://github.com/Leonardo-Burtet/DevOpsInfNet/actions
+      needs: build
+      steps:
+        - name: Aprovação
+          run: echo Aprovado
+  
   build-with-docker:
       runs-on: ubuntu-latest
-      
+      needs: build-prod
       steps:
       
         - uses: actions/checkout@v3
@@ -48,16 +58,8 @@ jobs:
           uses: docker/build-push-action@v3.2.0
           with:
             context: .
+            file: .
+            load: true
             push: true
             tags: |
-              leonardoburtet/devopsinfnetv1:v1
               leonardoburtet/devopsinfnetv1:latest
-  build-prod:
-      runs-on: ubuntu-latest
-      environment:
-        name: prod
-        url: https://github.com/Leonardo-Burtet/DevOpsInfNet/actions
-      needs: build
-      steps:
-        - name: Aprovação
-          run: echo Aprovado
