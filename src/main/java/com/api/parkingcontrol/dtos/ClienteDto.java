@@ -3,8 +3,6 @@ package com.api.parkingcontrol.dtos;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 
-import java.util.UUID;
-
 public class ClienteDto  {
 
     private Long id;
@@ -20,6 +18,9 @@ public class ClienteDto  {
     private String cpf;
 
     public ClienteDto(String nome, String email, String telefone, String cpf) {
+    }
+
+    public ClienteDto() {
     }
 
     public ClienteDto(Long id, String nome, String email, String telefone, String cpf) {

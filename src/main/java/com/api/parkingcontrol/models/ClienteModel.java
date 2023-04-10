@@ -1,9 +1,5 @@
 package com.api.parkingcontrol.models;
-
-import com.api.parkingcontrol.dtos.ClienteDto;
 import jakarta.persistence.*;
-
-import java.util.UUID;
 
 @Entity
 @Table(name = "Clientes")
