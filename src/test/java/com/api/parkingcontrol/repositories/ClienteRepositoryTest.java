@@ -23,11 +23,6 @@ class ClienteRepositoryTest {
     @Autowired
     private TestEntityManager em;
 
-
-    @Test
-    void existsByCpf() {
-    }
-
     @Test
     @DisplayName("Deve devolver null quando não houver cliente com ID selecionado")
     void findByIdWhenNotExists() {
